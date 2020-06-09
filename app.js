@@ -59,12 +59,12 @@ var totalCookies = 0;
 
 for(var i = 0; i < Lima.amStoreHours.length; i++)
 {
-var  target = document.getElementById("Lima");
-var listItem = document.createElement('li');
-var amCookieCount = Math.ceil(randomCustomer(Lima.minCust, Lima.maxCust) * Lima.avgCookie);
-    listItem.textContent = Lima.amStoreHours[i] + "am: " + amCookieCount + " cookies";
-    target.appendChild(listItem);
-    totalCookies = totalCookies + amCookieCount;
+  var  target = document.getElementById("Lima");
+  var listItem = document.createElement('li');
+  var amCookieCount = Math.ceil(randomCustomer(Lima.minCust, Lima.maxCust) * Lima.avgCookie);
+  listItem.textContent = Lima.amStoreHours[i] + "am: " + amCookieCount + " cookies";
+  target.appendChild(listItem);
+  totalCookies = totalCookies + amCookieCount;
 }
 
 for(var i = 0; i < Lima.pmStoreHours.length; i++)
@@ -72,20 +72,18 @@ for(var i = 0; i < Lima.pmStoreHours.length; i++)
   var  target = document.getElementById("Lima");
   var listItem = document.createElement('li');
   var pmCookieCount = Math.ceil(randomCustomer(Lima.minCust, Lima.maxCust) * Lima.avgCookie);
-    listItem.textContent = Lima.pmStoreHours[i] + "pm: " + pmCookieCount  + " cookies";
-    target.appendChild(listItem);
-    totalCookies = totalCookies + pmCookieCount;
+  listItem.textContent = Lima.pmStoreHours[i] + "pm: " + pmCookieCount  + " cookies";
+  target.appendChild(listItem);
+  totalCookies = totalCookies + pmCookieCount;
 }
 
 var  target = document.getElementById("Lima");
 var listItem = document.createElement('li');
-    listItem.textContent = "Total: " + totalCookies + " cookies";
-    target.appendChild(listItem);
+listItem.textContent = "Total: " + totalCookies + " cookies";
+target.appendChild(listItem);
 
 
 
-
-    
 function randomCustomer(min, max)
   {
     var randomNum = Math.floor(Math.random() * (max - min) + min);

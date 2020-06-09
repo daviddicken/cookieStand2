@@ -1,69 +1,27 @@
 'use strict'
 
-var Seattle =
+var seattle = new Store("Seattle", 23, 65, 6.5, [6, 7, 8, 9, 10, 11], [12, 1, 2, 3, 4, 5, 6, 7]);
+var dubai = new Store("Dubai", 11, 38, 3.7, [6, 7, 8, 9, 10, 11], [12, 1, 2, 3, 4, 5, 6, 7]);
+var paris = new Store("Paris", 20, 38, 2.3, [6, 7, 8, 9, 10, 11], [12, 1, 2, 3, 4, 5, 6, 7]);
+var lima = new Store("Lima", 2, 16, 4.6, [6, 7, 8, 9, 10, 11], [12, 1, 2, 3, 4, 5, 6, 7]);
+var tokyo = new Store("Tokyo", 3, 24, 1.2, [6, 7, 8, 9, 10, 11], [12, 1, 2, 3, 4, 5, 6, 7]);
+Store.prototype.makeList = makeList;
+
+lima.makeList();
+paris.makeList();
+dubai.makeList();
+tokyo.makeList();
+seattle.makeList();
+
+function Store(store, minCust, maxCust, avgCookie, amStoreHours, pmStoreHours)
 {
-  store : "Seattle",
-  minCust : 23,
-  maxCust : 65,
-  avgCookie : 6.3,
-  amStoreHours : [6, 7, 8, 9, 10, 11],
-  pmStoreHours : [12, 1, 2, 3, 4, 5, 6, 7],
-  makeList : makeList
-
+  this.store = store,
+  this.minCust = minCust,
+  this.maxCust = maxCust,
+  this.avgCookie = avgCookie,
+  this.amStoreHours = amStoreHours,
+  this.pmStoreHours = pmStoreHours
 }
-
-var Tokyo =
-{
-  store : "Tokyo",
-  minCust : 3,
-  maxCust : 24,
-  avgCookie : 1.2,
-  amStoreHours : [6, 7, 8, 9, 10, 11],
-  pmStoreHours : [12, 1, 2, 3, 4, 5, 6, 7],
-  makeList : makeList
-
-}
-
-var Dubai =
-{
-  store : "Dubai",
-  minCust : 11,
-  maxCust : 38,
-  avgCookie : 3.7,
-  amStoreHours : [6, 7, 8, 9, 10, 11],
-  pmStoreHours : [12, 1, 2, 3, 4, 5, 6, 7],
-  makeList : makeList
-
-}
-
-var Paris =
-{
-  store : "Paris",
-  minCust : 20,
-  maxCust : 38,
-  avgCookie : 2.3,
-  amStoreHours : [6, 7, 8, 9, 10, 11],
-  pmStoreHours : [12, 1, 2, 3, 4, 5, 6, 7],
-  makeList : makeList
-
-}
-
-var Lima =
-{
-  store : "Lima",
-  minCust : 2,
-  maxCust : 16,
-  avgCookie : 4.6,
-  amStoreHours : [6, 7, 8, 9, 10, 11],
-  pmStoreHours : [12, 1, 2, 3, 4, 5, 6, 7],
-  makeList : makeList,
-}
-
-Lima.makeList();
-Paris.makeList();
-Dubai.makeList();
-Tokyo.makeList();
-Seattle.makeList();
 
 function makeList()
 {

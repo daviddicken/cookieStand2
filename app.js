@@ -34,6 +34,8 @@ function Store(store, minCust, maxCust, avgCookie, amStoreHours, pmStoreHours)
 
 function tableData()
 {
+  var cookieTotal = 0;
+  var tempCookie = 0;
   var table = document.getElementById("store table");
   var dataRow = document.createElement("tr");
   var dataCell = document.createElement("td");
@@ -43,10 +45,15 @@ function tableData()
   for(var i = 0; i < storeHours.length; i++)
   {
     var nextCell = document.createElement("td");
-    nextCell.textContent = Math.ceil(randomCustomer(this.minCust, this.maxCust) * this.avgCookie);
+    tempCookie = Math.ceil(randomCustomer(this.minCust, this.maxCust) * this.avgCookie);
+    nextCell.textContent = tempCookie;
     dataRow.appendChild(nextCell);
+    cookieTotal = cookieTotal + tempCookie;
   }
 
+  var totalCell = document.createElement("th");
+  totalCell.textContent = cookieTotal;
+  dataRow.appendChild(totalCell);
   table.appendChild(dataRow);
 }
 // tableCell.textContent = Math.ceil(randomCustomer(this.minCust, this.maxCust) * this.avgCookie);

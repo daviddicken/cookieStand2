@@ -9,12 +9,20 @@ var tokyo = new Store("Tokyo", 3, 24, 1.2, [6, 7, 8, 9, 10, 11], [12, 1, 2, 3, 4
 Store.prototype.makeList = makeList;
 Store.prototype.tableData = tableData;
 
+
 tableHeader();
 seattle.tableData();
 tokyo.tableData();
 dubai.tableData();
 paris.tableData();
 lima.tableData();
+tableTotal();
+//tableFooter();
+// seattle.tableFooter();
+// tokyo.tableFooter();
+// dubai.tableFooter();
+// paris.tableFooter();
+// lima.tableFooter();
 
 // lima.makeList();
 // paris.makeList();
@@ -56,9 +64,6 @@ function tableData()
   dataRow.appendChild(totalCell);
   table.appendChild(dataRow);
 }
-// tableCell.textContent = Math.ceil(randomCustomer(this.minCust, this.maxCust) * this.avgCookie);
-  // tableRow.appendChild(tableCell);
-  // table.appendChild(tableRow);
 
 function tableHeader()
 {
@@ -79,12 +84,53 @@ for(var i = 0; i < storeHours.length; i++)
   headerRow.appendChild(totalCell);
 
   table.appendChild(headerRow);
-  
-
 }
-//tableData.prototype.randomCustomer = randomCustomer;
 
+function tableTotal()
+{
+  var table = document.getElementById("store table");
+  var lastRow = document.createElement("tr");
+  var totalCell = document.createElement("th");
+  totalCell.textContent = "Totals:";
+  lastRow.appendChild(totalCell);
+  table.appendChild(lastRow);
+}
+  
+  //https://stackoverflow.com/questions/4253558/get-a-particular-cell-value-from-html-table-using-javascript
+  // for(var j=1; j < 14; j++)
+  // {
+  //   //debugger;
+  //   var total = 0;
+  //   for(var i = 1; i < 4; i++)
+  //   {
+  //     var tempTotal = 0;
+  //     tempTotal = table.rows[j].cells[i];
+  //     total = tempTotal + total;
+  //   }
+  //   var totalCell = document.createElement("th");
+  //   totalCell.textContent = total;
+  //   lastRow.appendChild(totalCell);
+  // }
+  // function tableFooter()
+  // {
+  //   var total = 0;
+  //   var table = document.getElementById("store table");
+  //   var lastRow = document.createElement("tr");
+  //   var totalCell = document.createElement("th");
 
+  //   for(var i = 1; i < 5; i++)
+  //   {
+  //     debugger;
+  //     var tempTotal = tempTotal = table.rows[1].cells[1];
+  //     console.log(tempTotal);
+  //     total = tempTotal + total;
+  //   } 
+
+  //   totalCell.textContent = total;
+  //   lastRow.appendChild(totalCell);
+  //   table.appendChild(lastRow);
+  // }
+  
 
 function makeList()
 {
